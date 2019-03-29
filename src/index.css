@@ -1,3 +1,4 @@
+/*
 body {
   margin: 0;
   padding: 0;
@@ -8,7 +9,38 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+*/
+header {
+  background: #D3CCE3;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #E9E4F0, #D3CCE3);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #E9E4F0, #D3CCE3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.navbar {
+  -webkit-box-shadow: 16px 11px 57px -7px rgba(0,0,0,0.75);
+  -moz-box-shadow: 16px 11px 57px -7px rgba(0,0,0,0.75);
+  box-shadow: 16px 11px 57px -7px rgba(0,0,0,0.75);
+}
+
+.page-footer {
+  -webkit-box-shadow: 16px 11px 57px -7px rgba(0,0,0,0.75);
+  -moz-box-shadow: 16px 11px 57px -7px rgba(0,0,0,0.75);
+  box-shadow: 16px 11px 57px -7px rgba(0,0,0,0.75);
+}
+
+.container-slider {
+  margin-top: 150px;
+  margin-bottom: 150px;
+
+}
+body {
+  background: #D3CCE3;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #E9E4F0, #D3CCE3);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #E9E4F0, #D3CCE3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */  
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+
