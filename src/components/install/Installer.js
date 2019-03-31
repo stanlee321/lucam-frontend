@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { Component } from 'react';
 
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import ReactCursorPosition, { INTERACTIONS } from 'react-cursor-position';
+
 import Image from './Image.js';
+import Options from './Options.js';
+
 
 const styles = theme => ({
   root: {
@@ -19,27 +22,42 @@ const styles = theme => ({
 })
 
 
-const coordHandler = (data) => {
-  console.log('HEY here is the coord!! D:')
-  console.log(data)
-}
 
-function FullWidthGrid(props) {
-  const { classes } = props;
+class FullWidthGrid extends Component {
+  constructor(props) {
+    super(props);
+  }
 
-  return (
-    <div className="container-slider">
+  state = {
+    coords: {
+      x: 0,
+      y: 0
+    }
+  }
 
-      <div className={classes.root}>
-        <Grid container spacing={24}>
-          <Grid item xs={12}>
-            <Paper className={classes.paper}>
-              <Grid container spacing={24}>
+
+  updateCoods = (data) => {
+    this.setState({ coords: data })
+  }
+
+
+  render() {
+    const { classes } = this.props;
+
+    return (
+      <div className="container-slider">
+
+        <div className={classes.root}>
+          <Grid container spacing={24}>
+            <Grid item xs={12}>
+              <Paper className={classes.paper}>
+                <Grid container spacing={24}>
 
                   <Grid item xs={12} sm={9}>
                     <Paper className={classes.paper} >
-                      <ReactCursorPosition  activationInteractionMouse={INTERACTIONS.CLICK}
-                        getCoord={coordHandler}>
+                      <ReactCursorPosition activationInteractionMouse={INTERACTIONS.CLICK}
+                        getData={this.updateCoods}>
+
                         <Image />
 
                       </ReactCursorPosition>
@@ -47,17 +65,21 @@ function FullWidthGrid(props) {
                   </Grid>
 
                   <Grid item xs={6} sm={3}>
-                    <Paper className={classes.paper}> xs=6 sm=3</Paper>
+                    <Paper className={classes.paper}>
+                      <Options x={this.state.coords.x} y={this.state.coords.y} />
+                    </Paper>
                   </Grid>
 
-              </Grid>
-            </Paper>
+                </Grid>
+              </Paper>
+            </Grid>
           </Grid>
-        </Grid>
+        </div>
       </div>
-    </div>
-  );
+    )
+  }
 }
+
 
 FullWidthGrid.propTypes = {
   classes: PropTypes.object.isRequired,

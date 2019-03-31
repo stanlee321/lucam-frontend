@@ -10,7 +10,7 @@ const image = (props) => {
         y:y
     }
     return (
-        <img src={require("./test_img.jpg")} onClick={ () => props.getCoord(data) } style={{height: "100%", width: "100%"}}></img>
+        <img src={require("./test_img.jpg")} onClick={ () => props.getData(data) } style={{height: "100%", width: "100%"}} alt="This is a placeholder"></img>
     )
 }
 
