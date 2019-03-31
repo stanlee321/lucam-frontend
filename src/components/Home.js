@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Container, Row, Col } from 'reactstrap';
-import { NavLink } from 'react-router-dom';
 
 import logo from 'assets/logo.svg';
 

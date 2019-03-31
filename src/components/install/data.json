@@ -1,0 +1,8 @@
+{
+    "images": [ 
+        {
+            "path": "./test_img.jpg",
+            "name": "TEST IMAGE"
+        }
+    ]
+}
